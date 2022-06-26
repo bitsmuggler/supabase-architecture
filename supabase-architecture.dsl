@@ -27,15 +27,15 @@ workspace "Supabase" "This is the C4 model of supabase" {
             
             }
             
-            storage = container "Storage" {
+            storage = container "Storage" "S3 compatible object storage service with Postgres and GoTrue" {
                 
             }
             
-            pgmeta = container "pgMeta" {
+            pgmeta = container "postgres-meta" "providing a RESTful API to managing PostgreSQL databases" {
                 
             }
             
-            postgresql = container "postgresql" {
+            postgresql = container "PostgreSQL" "as database management system as main part of supabase" {
                 
             }
         } 
