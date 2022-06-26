@@ -1,6 +1,6 @@
 # supabase-architecture
 
-I've tried to evaluate the architecture and the tech stack of Supabase. 
+I've tried to examine the architecture and the tech stack of Supabase. 
 
 This repository contains the diagrams as code.
 
