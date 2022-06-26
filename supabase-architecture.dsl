@@ -74,17 +74,9 @@ workspace "Supabase" "This is the C4 model of supabase" {
     }
          
     views {
-    
-        systemlandscape "SystemLandscape" {
-            include *
-            autoLayout
-        }
 
-        container supabase "Context-1" "app.supabase.com" {
+        container supabase "Context" "app.supabase.com" {
             include *
-            animation {
-               pgmeta
-            }
             autoLayout
         }
 
