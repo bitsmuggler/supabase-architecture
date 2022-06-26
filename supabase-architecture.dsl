@@ -62,7 +62,7 @@ workspace "Supabase" "This is the C4 model of supabase" {
             autoLayout
         }
 
-        container supabase "Context" "An example System Context diagram for the Financial Risk System architecture kata." {
+        container supabase "Context" "app.supabase.com" {
             include *
             animation {
                pgmeta
