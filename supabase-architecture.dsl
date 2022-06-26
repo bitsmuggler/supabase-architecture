@@ -41,6 +41,7 @@ workspace "Supabase" "This is the C4 model of supabase" {
         } 
         
         
+        user -> application
         application -> kong
         kong -> goTrue
         kong -> postgrest
