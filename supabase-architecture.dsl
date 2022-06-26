@@ -44,7 +44,7 @@ workspace "Supabase" "This is the C4 model of supabase" {
             }
         } 
 
-        storage = softwareSystem "Supabase Storage" {
+        storage = softwareSystem "S3 Storage Provider" {
             s3Storage = container "AWS S3 Storage" {
                 
             }
