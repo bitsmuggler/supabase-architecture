@@ -7,12 +7,14 @@ workspace "Supabase" "This is the C4 model of supabase" {
         
         application = softwareSystem "An application who consumes the REST APIs of Supabase" {
             
-         }
+        }
 
-        dashboard = softwareSystem "Supabase Dashboard"
-        
         supabase = softwareSystem "Supabase" {
             
+            dashboard = container "Dashboard" {
+                
+            }
+          
             kong = container "Kong" "API Gateway" {
                 url https://konghq.com/kong
             }
@@ -63,7 +65,7 @@ workspace "Supabase" "This is the C4 model of supabase" {
         kong -> goTrue
         kong -> postgrest
         kong -> realtime
-        kong -> storage
+        kong -> storageApi
         kong -> pgmeta
         goTrue -> postgresql
         postgrest -> postgresql
