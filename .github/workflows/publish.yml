@@ -1,4 +1,4 @@
-name: sctructurizr-cli  # feel free to pick your own name
+name: structurizr-cli
 
 on: [push]
 
