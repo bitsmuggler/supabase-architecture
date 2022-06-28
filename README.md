@@ -1,6 +1,12 @@
 # supabase-architecture
 ![supabasae-architecture CI Status](https://github.com/bitsmuggler/supabase-architecture/actions/workflows/publish.yml/badge.svg)
 
-This repository contains the diagrams as code from the following blog post: https://www.workingsoftware.dev/tech-stack-and-architecture-of-supabase/
+Out of interest, I analyze the architecture and technology stack of some interesting products. This repository contains the architecture diagrams from the Supabase technical analysis.
 
-* [C4 Container Diagram](https://structurizr.com/share/75038/diagrams#Context)
+You can find all analyses under [Products under the hood](https://www.workingsoftware.dev/tag/under-the-hood/)
+
+Architecture and Tech Stack of Supabase: https://www.workingsoftware.dev/tech-stack-and-architecture-of-supabase/
+
+* Diagrams
+    * [Supabase Diagram](https://structurizr.com/workspace/75038/diagrams#Supabase)
+    * [Supabase Client Libraries Diagram](https://structurizr.com/share/75038/diagrams#Supabase-Clients)
