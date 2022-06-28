@@ -81,11 +81,11 @@ workspace "Supabase" "This is the C4 model of supabase" {
         realtime -> postgresql
         storageApi -> postgresql
         storageApi -> s3Storage
-        storageApi -> gotruejs
+        storageApi -> goTrue
         pgmeta -> postgresql
         supabasejs -> gotruejs
         supabasejs -> kong
-        goruejs -> kong
+        gotruejs -> kong
     }
          
     views {
