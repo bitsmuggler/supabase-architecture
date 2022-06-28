@@ -85,7 +85,7 @@ workspace "Supabase" "This is the C4 model of supabase" {
         pgmeta -> postgresql
         supabasejs -> gotruejs
         supabasejs -> kong
-        gotruejs -> kong
+        goruejs -> kong
     }
          
     views {
