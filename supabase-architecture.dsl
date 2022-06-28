@@ -5,7 +5,7 @@ workspace "Supabase" "This is the C4 model of supabase" {
         developer = person "Developer" "A developer who uses supabase"
         configurationUser = person "Configuration User" "A regular business user who can also configure the parameters used in the risk calculations."
         
-        supabaseClient = softwareSystem "Supabase Cliet Libraries" {
+        supabaseClient = softwareSystem "Supabase Client Libraries" {
             supabasejs = container "supabasejs" "An isomorphic Javascript client for Supabase." {
                 url https://github.com/supabase/supabase-js
                 technology "TypeScript"
