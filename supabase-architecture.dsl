@@ -5,7 +5,7 @@ workspace "Supabase" "This is the C4 model of supabase" {
         developer = person "Developer" "A developer who uses supabase"
         configurationUser = person "Configuration User" "A regular business user who can also configure the parameters used in the risk calculations."
         
-        application = softwareSystem "An application on top of Supabase" {
+        supabaseClient = softwareSystem "Supabase Cliet Libraries" {
             supabasejs = container "supabasejs" "An isomorphic Javascript client for Supabase." {
                 url https://github.com/supabase/supabase-js
                 technology "TypeScript"
@@ -68,8 +68,8 @@ workspace "Supabase" "This is the C4 model of supabase" {
         }
         
         
-        user -> application
-        application -> kong
+        user -> supabaseClient
+        supabaseClient -> kong
         dashboard -> kong
         kong -> goTrue
         kong -> postgrest
@@ -90,6 +90,11 @@ workspace "Supabase" "This is the C4 model of supabase" {
     views {
 
         container supabase "Container" "app.supabase.com" {
+            include *
+            autoLayout
+        }
+
+        container supabaseClient "Container" "Supabase Client Libraries" {
             include *
             autoLayout
         }
