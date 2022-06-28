@@ -5,8 +5,16 @@ workspace "Supabase" "This is the C4 model of supabase" {
         developer = person "Developer" "A developer who uses supabase"
         configurationUser = person "Configuration User" "A regular business user who can also configure the parameters used in the risk calculations."
         
-        application = softwareSystem "An application who consumes the REST APIs of Supabase" {
-            
+        application = softwareSystem "An application on top of Supabase" {
+            supabasejs = container "supabasejs" "An isomorphic Javascript client for Supabase." {
+                url https://github.com/supabase/supabase-js
+                technology "TypeScript"
+            }
+
+            gotruejs = container "gotruejs" "An isomorphic Javascript library for GoTrue." {
+                url https://github.com/supabase/gotrue-js
+                technology "TypeScript"
+            }
         }
 
         supabase = softwareSystem "Supabase" {
@@ -37,12 +45,13 @@ workspace "Supabase" "This is the C4 model of supabase" {
                 technology "TypeScript"
             }
             
-            pgmeta = container "postgres-meta" "providing a RESTful API to managing PostgreSQL databases" {
-                
+            pgmeta = container "postgres-meta" "providing a RESTful API to managing all metadata of PostgreSQL databases" {
+                url https://github.com/supabase/postgres-meta
             }
 
-            postgresql = container "PostgreSQL" "as database management system as main part of supabase" {
-                
+            postgresql = container "Postgres" "as database management system as main part of supabase" {
+                technology "TypeScript"
+                url https://github.com/supabase/postgres
             }
         } 
 
@@ -73,11 +82,14 @@ workspace "Supabase" "This is the C4 model of supabase" {
         storageApi -> postgresql
         storageApi -> s3Storage
         pgmeta -> postgresql
+        supabasejs -> gotruejs
+        supabasejs -> kong
+        gotruejs -> kong
     }
          
     views {
 
-        container supabase "Context" "app.supabase.com" {
+        container supabase "Container" "app.supabase.com" {
             include *
             autoLayout
         }
