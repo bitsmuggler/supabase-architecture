@@ -89,12 +89,12 @@ workspace "Supabase" "This is the C4 model of supabase" {
          
     views {
 
-        container supabase "Container" "app.supabase.com" {
+        container supabase "Supabase" "app.supabase.com" {
             include *
             autoLayout
         }
 
-        container supabaseClient "Container" "Supabase Client Libraries" {
+        container supabaseClient "Supabase-Clients" "Supabase Client Libraries" {
             include *
             autoLayout
         }
