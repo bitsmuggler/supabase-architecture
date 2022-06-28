@@ -10,3 +10,5 @@ Out of interest, I analyze the architecture and technology stack of some interes
 * Diagrams
     * [Supabase Diagram](https://structurizr.com/workspace/75038/diagrams#Supabase)
     * [Supabase Client Libraries Diagram](https://structurizr.com/share/75038/diagrams#Supabase-Clients)
+
+These diagrams are described with the [Structurizr DSL](https://github.com/structurizr/dsl/blob/master/docs/language-reference.md) and [Structurizr](https://structurizr.com/).
