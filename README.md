@@ -3,8 +3,9 @@
 
 Out of interest, I analyze the architecture and technology stack of some interesting products. This repository contains the architecture diagrams from the Supabase technical analysis.
 
-* [Products under the hood](https://www.workingsoftware.dev/tag/under-the-hood/)
-* [Architecture and Tech Stack of Supabase](https://www.workingsoftware.dev/tech-stack-and-architecture-of-supabase/)
+* Posts
+    * [Products under the hood](https://www.workingsoftware.dev/tag/under-the-hood/)
+    * [Architecture and Tech Stack of Supabase](https://www.workingsoftware.dev/tech-stack-and-architecture-of-supabase/)
 
 * Diagrams
     * [Supabase Diagram](https://structurizr.com/workspace/75038/diagrams#Supabase)
