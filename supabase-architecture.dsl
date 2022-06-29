@@ -6,13 +6,35 @@ workspace "Supabase" "This is the C4 model of supabase" {
         configurationUser = person "Configuration User" "A regular business user who can also configure the parameters used in the risk calculations."
         
         supabaseClient = softwareSystem "Supabase Client Libraries" {
-            supabasejs = container "supabasejs" "An isomorphic Javascript client for Supabase." {
+            url https://supabase.com/docs/reference#client-libraries
+
+            supabasejs = container "supabasejs" "supabase-js: An isomorphic Javascript client for Supabase." {
                 url https://github.com/supabase/supabase-js
                 technology "TypeScript"
             }
 
-            gotruejs = container "gotruejs" "An isomorphic Javascript library for GoTrue." {
+            gotruejs = container "gotruejs" "gotrue-js: An isomorphic Javascript library for GoTrue in the context of Supabase" {
                 url https://github.com/supabase/gotrue-js
+                technology "TypeScript"
+            }
+
+            functionsjs = container "functionsjs" "functions-js: JS Client library to interact with Supabase Functions." {
+                url https://github.com/supabase/functions-js
+                technology "TypeScript"
+            }
+
+            postgrestjs = container "postgrestjs" "postgrest-js: Isomorphic JavaScript client for PostgREST. The goal of this library is to make an ORM-like restful interface." {
+                url https://github.com/supabase/postgrest-js
+                technology "TypeScript"
+            }
+
+            realtimejs = container "realitimejs" "realtime-js: Listens to changes in a PostgreSQL Database and via websockets." {
+                url https://github.com/supabase/realtime-js
+                technology "TypeScript"
+            }
+
+            storagejs = container "storagejs" "storage-js: JS Client library to interact with Supabase Storage." {
+                url https://github.com/supabase/storage-js
                 technology "TypeScript"
             }
         }
@@ -83,9 +105,12 @@ workspace "Supabase" "This is the C4 model of supabase" {
         storageApi -> s3Storage
         storageApi -> goTrue
         pgmeta -> postgresql
+
         supabasejs -> gotruejs
-        supabasejs -> kong
-        gotruejs -> kong
+        supabasejs -> functionsjs
+        supabasejs -> postgrestjs
+        supabasejs -> realtimejs
+        supabasejs -> storagejs
     }
          
     views {
