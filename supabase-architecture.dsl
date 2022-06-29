@@ -1,4 +1,4 @@
-workspace "Supabase" "This is the C4 model of supabase" {
+workspace "Supabase" "This shows the technical building blocks of Supabase" {
 
     model {
         user = person "App User" "An user who uses the application"
