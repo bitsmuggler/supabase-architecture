@@ -94,7 +94,7 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
         }
        
         developer -> supabaseStudio
-        application -> supbaseBackend
+        application -> supabaseBackend
         user -> supabaseClient
         supabaseStudio -> kong
         supabaseClient -> kong
