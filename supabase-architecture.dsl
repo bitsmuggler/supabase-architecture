@@ -6,10 +6,6 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
         configurationUser = person "Configuration User" "A regular business user who can also configure the parameters used in the risk calculations."
 
         application = softwareSystem "Your Web Application" {
-
-        }
-        
-        enterprise "Supabase" {
             supabaseClient = softwareSystem "Supabase Client Libraries" {
                 url https://supabase.com/docs/reference#client-libraries
             
@@ -37,7 +33,10 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
                     url https://github.com/supabase/storage-js
                 }
              }
-
+        }
+        
+        enterprise "Supabase" {
+           
 
             supabaseStudio = softwareSystem "Supabase Studio" {
                 studio = container "Supabase Studio" "supabase" {
