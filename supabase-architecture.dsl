@@ -33,6 +33,10 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
             }
         }
 
+        supabaseStudio = softwareSystem "Supabase Studio" {
+
+        }
+
         supabase = softwareSystem "Supabase" "A dashboard for managing the self-hosted Supabase project, and used on the hosted platform." {
             
             studio = container "Supabase Studio" "supabase" {
@@ -57,6 +61,10 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
             
             storageApi = container "Storage API" "S3 compatible object storage service with Postgres and GoTrue" "TypeScript" {
                 url https://github.com/supabase/storage-api,
+            }
+
+            pggraphql = container "pg_graphql" "pg_graphql adds GraphQL support to your PostgreSQL database." "PLpgSQL" {
+                url https://github.com/supabase/pg_graphql
             }
             
             pgmeta = container "postgres-meta" "providing a RESTful API to managing all metadata of PostgreSQL databases" {
@@ -89,8 +97,10 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
         kong -> realtime
         kong -> storageApi
         kong -> pgmeta
+        kong -> pggraphql
         goTrue -> postgresql
         postgrest -> postgresql
+        pggraphql -> postgresql
         realtime -> postgresql
         storageApi -> postgresql
         storageApi -> s3Storage
