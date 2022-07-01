@@ -58,6 +58,9 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
                 
                 postgrest = container "PostgREST" "turns the PostgreSQL database directly into a RESTful API." {
                     url https://postgrest.org/en/stable/
+                     pggraphql = component "pg_graphql adds GraphQL support to your PostgreSQL database." "PLpgSQL" {
+                        url https://github.com/supabase/pg_graphql
+                    }
                 }
                 
                 realtime = container "Realtime" "Listen to your to PostgreSQL database in realtime via websockets." "Elixir" {
@@ -68,16 +71,12 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
                     url https://github.com/supabase/storage-api,
                 }
 
-                pggraphql = container "pg_graphql" "pg_graphql adds GraphQL support to your PostgreSQL database." "PLpgSQL" {
-                    url https://github.com/supabase/pg_graphql
-                }
-                
-                pgmeta = container "postgres-meta" "providing a RESTful API to managing all metadata of PostgreSQL databases" {
-                    url https://github.com/supabase/postgres-meta
-                }
-
                 postgresql = container "Postgres" "as database management system as main part of supabase" "TypeScript" {
                     url https://github.com/supabase/postgres
+                }
+                
+                pgmeta = container "Postgres-Meta" "providing a RESTful API to managing all metadata of PostgreSQL databases" {
+                        url https://github.com/supabase/postgres-meta
                 }
             } 
         }
@@ -102,20 +101,21 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
         supabaseStudio -> kong
         supabaseClient -> kong
         studio -> kong
-        kong -> goTrue
-        kong -> postgrest
-        kong -> realtime
-        kong -> storageApi
-        kong -> pgmeta
-        kong -> pggraphql
+        
+        kong -> goTrue "/auth"
+        kong -> postgrest "/rest"
+        kong -> realtime "/realtime"
+        kong -> storageApi "/storage"
+        kong -> pgmeta "/pg"
+        kong -> pggraphql "/rest | /graphql"
+        
         goTrue -> postgresql
         postgrest -> postgresql
-        pggraphql -> postgresql
         realtime -> postgresql
         storageApi -> postgresql
+        pgmeta -> postgresql
         storageApi -> s3Storage
         storageApi -> goTrue
-        pgmeta -> postgresql
 
         supabasejs -> postgrestjs
         supabasejs -> gotruejs
