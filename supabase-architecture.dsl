@@ -8,41 +8,35 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
         supabaseClient = softwareSystem "Supabase Client Libraries" {
             url https://supabase.com/docs/reference#client-libraries
 
-            supabasejs = container "supabasejs" "supabase-js: An isomorphic Javascript client for Supabase." {
+            supabasejs = container "supabasejs" "supabase-js: An isomorphic Javascript client for Supabase." "TypeScript" {
                 url https://github.com/supabase/supabase-js
-                technology "TypeScript"
             }
 
-            gotruejs = container "gotruejs" "gotrue-js: An isomorphic Javascript library for GoTrue in the context of Supabase" {
+            gotruejs = container "gotruejs" "gotrue-js: An isomorphic Javascript library for GoTrue in the context of Supabase" "TypeScript" {
                 url https://github.com/supabase/gotrue-js
-                technology "TypeScript"
             }
 
-            functionsjs = container "functionsjs" "functions-js: JS Client library to interact with Supabase Functions." {
+            functionsjs = container "functionsjs" "functions-js: JS Client library to interact with Supabase Functions." "TypeScript" {
                 url https://github.com/supabase/functions-js
-                technology "TypeScript"
             }
 
-            postgrestjs = container "postgrestjs" "postgrest-js: Isomorphic JavaScript client for PostgREST. The goal of this library is to make an ORM-like restful interface." {
+            postgrestjs = container "postgrestjs" "postgrest-js: Isomorphic JavaScript client for PostgREST. The goal of this library is to make an ORM-like restful interface." "TypeScript" {
                 url https://github.com/supabase/postgrest-js
-                technology "TypeScript"
             }
 
-            realtimejs = container "realitimejs" "realtime-js: Listens to changes in a PostgreSQL Database and via websockets." {
+            realtimejs = container "realitimejs" "realtime-js: Listens to changes in a PostgreSQL Database and via websockets." "TypeScript" {
                 url https://github.com/supabase/realtime-js
-                technology "TypeScript"
             }
 
-            storagejs = container "storagejs" "storage-js: JS Client library to interact with Supabase Storage." {
+            storagejs = container "storagejs" "storage-js: JS Client library to interact with Supabase Storage." "TypeScript"{
                 url https://github.com/supabase/storage-js
-                technology "TypeScript"
             }
         }
 
-        supabase = softwareSystem "Supabase" {
+        supabase = softwareSystem "Supabase" "A dashboard for managing the self-hosted Supabase project, and used on the hosted platform." {
             
-            dashboard = container "Dashboard" {
-                
+            studio = container "Supabase Studio" {
+                url https://github.com/supabase/supabase/tree/master/studio
             }
           
             kong = container "Kong" "API Gateway" {
@@ -57,22 +51,19 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
                 url https://postgrest.org/en/stable/
             }
             
-            realtime = container "Realtime" "Listen to your to PostgreSQL database in realtime via websockets." {
+            realtime = container "Realtime" "Listen to your to PostgreSQL database in realtime via websockets." "Elixir" {
                 url https://github.com/supabase/realtime,
-                technology "Elixir"
             }
             
-            storageApi = container "Storage API" "S3 compatible object storage service with Postgres and GoTrue" {
+            storageApi = container "Storage API" "S3 compatible object storage service with Postgres and GoTrue" "TypeScript" {
                 url https://github.com/supabase/storage-api,
-                technology "TypeScript"
             }
             
             pgmeta = container "postgres-meta" "providing a RESTful API to managing all metadata of PostgreSQL databases" {
                 url https://github.com/supabase/postgres-meta
             }
 
-            postgresql = container "Postgres" "as database management system as main part of supabase" {
-                technology "TypeScript"
+            postgresql = container "Postgres" "as database management system as main part of supabase" "TypeScript" {
                 url https://github.com/supabase/postgres
             }
         } 
@@ -92,7 +83,7 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
         
         user -> supabaseClient
         supabaseClient -> kong
-        dashboard -> kong
+        studio -> kong
         kong -> goTrue
         kong -> postgrest
         kong -> realtime
