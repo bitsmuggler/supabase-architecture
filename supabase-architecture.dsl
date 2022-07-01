@@ -35,7 +35,7 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
 
         supabase = softwareSystem "Supabase" "A dashboard for managing the self-hosted Supabase project, and used on the hosted platform." {
             
-            studio = container "Supabase Studio" {
+            studio = container "Supabase Studio" "supabase" {
                 url https://github.com/supabase/supabase/tree/master/studio
             }
           
@@ -120,6 +120,11 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
             element "Software System" {
                 background #46BD84
                 color #ffffff
+            }
+
+            element "Container" {
+                background #46BD84
+                color #ffffff  
             }
         }
 
