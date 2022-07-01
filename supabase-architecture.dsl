@@ -34,14 +34,12 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
         }
 
         supabaseStudio = softwareSystem "Supabase Studio" {
-
-        }
-
-        supabase = softwareSystem "Supabase" "A dashboard for managing the self-hosted Supabase project, and used on the hosted platform." {
-            
             studio = container "Supabase Studio" "supabase" {
                 url https://github.com/supabase/supabase/tree/master/studio
             }
+        }
+
+        supabase = softwareSystem "Supabase" "A dashboard for managing the self-hosted Supabase project, and used on the hosted platform." {
           
             kong = container "Kong" "API Gateway" {
                 url https://konghq.com/kong
@@ -90,6 +88,7 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
         
         
         user -> supabaseClient
+        supabaseStudio -> kong
         supabaseClient -> kong
         studio -> kong
         kong -> goTrue
