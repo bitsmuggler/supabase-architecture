@@ -108,9 +108,9 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
 
         supabasejs -> postgrestjs
         supabasejs -> gotruejs
-        supabasejs -> functionsjs
         supabasejs -> realtimejs
         supabasejs -> storagejs
+        supabasejs -> functionsjs
     }
          
     views {
