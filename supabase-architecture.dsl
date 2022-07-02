@@ -5,7 +5,13 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
         developer = person "Developer" "A developer who uses supabase"
         configurationUser = person "Configuration User" "A regular business user who can also configure the parameters used in the risk calculations."
 
-        supabaseClient = softwareSystem "Supabase Client Libraries" {
+        application = softwareSystem "Your Web Application" {
+           
+        }
+        
+        enterprise "Supabase" {
+           
+           supabaseClient = softwareSystem "Supabase Client Libraries" {
                 url https://supabase.com/docs/reference#client-libraries
             
                 supabasejs = container "supabasejs" "supabase-js: An isomorphic Javascript client for Supabase." "TypeScript" {
@@ -31,14 +37,7 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
                 storagejs = container "storagejs" "storage-js: JS Client library to interact with Supabase Storage." "TypeScript"{
                     url https://github.com/supabase/storage-js
                 }
-        }
-
-        application = softwareSystem "Your Web Application" {
-           
-        }
-        
-        enterprise "Supabase" {
-           
+            }
 
             supabaseStudio = softwareSystem "Supabase Studio" {
                 studio = container "Supabase Studio" "supabase" {
@@ -97,9 +96,8 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
         developer -> supabaseStudio
         
         application -> supabasejs "uses"
-        supabaseClient -> kong
-        supabaseStudio -> kong
-        supabaseClient -> kong
+        supabaseClient -> kong "https"
+        supabaseStudio -> kong "https"
         studio -> kong
         
         kong -> goTrue "/auth"
