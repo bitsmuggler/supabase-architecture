@@ -1,7 +1,9 @@
 # supabase-architecture
 ![supabasae-architecture CI Status](https://github.com/bitsmuggler/supabase-architecture/actions/workflows/publish.yml/badge.svg)
 
-Out of interest, I analyze the architecture and technology stack of some interesting products. This repository contains the architecture diagrams from the Supabase technical analysis.
+Out of interest, I analyze the architecture and technology stack of some interesting products. 
+
+This repository contains the architecture diagrams from the Supabase technical analysis.
 
 * Posts
     * [Products under the hood](https://www.workingsoftware.dev/tag/under-the-hood/)
