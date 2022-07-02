@@ -5,7 +5,7 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
         developer = person "Developer" "A developer who uses supabase"
         configurationUser = person "Configuration User" "A regular business user who can also configure the parameters used in the risk calculations."
 
-        supabaseClient = softwareSystem "Supabase Client JavaScript Libraries" {
+        supabaseClient = softwareSystem "Supabase Client Libraries" {
                 url https://supabase.com/docs/reference#client-libraries
             
                 supabasejs = container "supabasejs" "supabase-js: An isomorphic Javascript client for Supabase." "TypeScript" {
