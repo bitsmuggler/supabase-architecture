@@ -110,7 +110,7 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
         application -> supabasejs "uses"
         supabaseClient -> kong "https"
         supabaseStudio -> kong "https"
-        studio -> supabaseUi "uses"
+        studio -> supabaseUi "UI based on"
         studio -> sentry "Logging"
         studio -> stripe "Payment"
         
