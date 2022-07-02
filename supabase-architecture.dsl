@@ -39,6 +39,10 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
                 }
             }
 
+            supabaseUi = softwareSystem "Supabase UI" "An open-source UI component library inspired by Tailwind and AntDesign." {
+                url https://ui.supabase.io/
+            }
+
             supabaseStudio = softwareSystem "Supabase Studio" {
                 studio = container "Supabase Studio" "supabase" {
                     url https://github.com/supabase/supabase/tree/master/studio
@@ -77,7 +81,15 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
                 pgmeta = container "Postgres-Meta" "providing a RESTful API to managing all metadata of PostgreSQL databases" {
                         url https://github.com/supabase/postgres-meta
                 }
-            } 
+            }
+        }
+
+        sentry = softwareSystem "Sentry" "Application Monitoring & Tracking System" {
+            url https://sentry.io/
+        }
+
+        stripe = softwareSystem "Stripe" "Payment Gateway" {
+            url https://stripe.com/
         }
 
         storage = softwareSystem "S3 Storage Provider" {
@@ -98,7 +110,9 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
         application -> supabasejs "uses"
         supabaseClient -> kong "https"
         supabaseStudio -> kong "https"
-        studio -> kong
+        studio -> supabaseUi "uses"
+        studio -> sentry "Logging"
+        studio -> stripe "Payment"
         
         kong -> goTrue "/auth"
         kong -> postgrest "/rest"
@@ -145,13 +159,18 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
             autoLayout
         }
 
-        container supabaseBackend "Supabase" "app.supabase.com" {
+        container supabaseBackend "Supabase" {
             include *
             autoLayout
             exclude "supabaseClient -> realtime" "supabaseClient -> postgrest" "supabaseClient -> goTrue" "supabaseClient -> storageApi"
         }
 
         container supabaseClient "Supabase-Clients" "Supabase Client Libraries" {
+            include *
+            autoLayout
+        }
+
+        container supabaseStudio "Supabase-Studio" "app.supabase.com" {
             include *
             autoLayout
         }
