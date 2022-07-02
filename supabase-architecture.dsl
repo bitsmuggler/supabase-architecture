@@ -46,7 +46,7 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
                 }
             }
 
-            supabaseBackend = softwareSystem "Supabase" "A dashboard for managing the self-hosted Supabase project, and used on the hosted platform." {
+            supabaseBackend = softwareSystem "Supabase" "Supabase" {
             
                 kong = container "Kong" "API Gateway" {
                     url https://konghq.com/kong
