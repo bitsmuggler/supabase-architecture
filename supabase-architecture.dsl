@@ -139,7 +139,7 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
         gotruejs -> goTrue "/auth"
         realtimejs -> realtime "/realtime"
         storagejs -> storageApi "/storage"
-        functionsjs -> supabase "/function"
+        functionsjs -> kong "/function"
     }
          
     views {
