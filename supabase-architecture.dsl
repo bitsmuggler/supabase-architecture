@@ -178,13 +178,13 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
 
         styles {
             element "Software System" {
-                background #46BD84
-                color #ffffff
+                background #000000
+                color #46BD84
             }
 
             element "Container" {
-                background #46BD84
-                color #ffffff  
+                background #000000
+                color #46BD84  
             }
         }
 
