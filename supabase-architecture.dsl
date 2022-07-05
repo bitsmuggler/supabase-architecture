@@ -189,6 +189,5 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
                 colour #46BD84  
             }
         }
-
     }
 }
