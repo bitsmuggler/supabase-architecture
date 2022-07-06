@@ -43,6 +43,10 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
                 url https://ui.supabase.io/
             }
 
+            supabaseCli = softwareSystem "Supabase CLI" {
+                url https://supabase.com/docs/reference/cli/about
+            }
+
             supabaseStudio = softwareSystem "Supabase Studio" {
                 studio = container "Supabase Studio" "supabase" {
                     url https://github.com/supabase/supabase/tree/master/studio
@@ -110,6 +114,7 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
         application -> supabasejs "uses"
         supabaseClient -> kong "https"
         supabaseStudio -> kong "https"
+        supabaseCli -> kong "https"
         studio -> supabaseUi "UI based on"
         studio -> sentry "Logging"
         studio -> stripe "Payment"
