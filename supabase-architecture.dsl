@@ -78,7 +78,7 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
                     url https://github.com/supabase/storage-api,
                 }
 
-                postgresql = container "Postgres" "as database management system as main part of supabase" "C" {
+                postgresql = container "Postgres" "Database management system as main part of supabase" "C" {
                     url https://github.com/supabase/postgres
                 }
                 
