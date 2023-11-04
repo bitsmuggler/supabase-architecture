@@ -59,11 +59,11 @@ workspace "Supabase" "This shows the technical building blocks of Supabase" {
                     url https://konghq.com/kong
                 }
                 
-                goTrue = container "GoTrue" "An SWT based API for managing users and issuing SWT tokens" {
+                goTrue = container "GoTrue" "An SWT based API for managing users and issuing SWT tokens" "Go" {
                     url https://github.com/netlify/gotrue
                 }
                 
-                postgrest = container "PostgREST" "turns the PostgreSQL database directly into a RESTful API." {
+                postgrest = container "PostgREST" "turns the PostgreSQL database directly into a RESTful API." "Haskell" {
                     url https://postgrest.org/en/stable/
                      pggraphql = component "pg_graphql adds GraphQL support to your PostgreSQL database." "PLpgSQL" {
                         url https://github.com/supabase/pg_graphql
